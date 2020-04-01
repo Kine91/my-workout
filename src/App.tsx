@@ -1,21 +1,34 @@
 import * as React from "react";
-import { hot } from "react-hot-loader";
 
-const reactLogo = require("./../assets/img/react_logo.svg");
-import "./styles/common";
 
-class App extends React.Component<{}, undefined> {
-    public render() {
-        return (
-            <div className="app">
-                <h1>Hello World!</h1>
-                <p>Foo to the barz</p>
-                <img src={reactLogo.default} height="480"/>
-            </div>
-        );
-    }
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Header from "./layout/Header";
+import Footer from "./layout/Footer";
+
+export default class App extends React.Component<{}, undefined> {
+  public render() {
+    return (
+      <section id="page-wrapper">
+        <Header />
+
+        <main>
+          <Router>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+            </Switch>
+          </Router>
+        </main>
+
+        <Footer />
+      </section>
+    );
+  }
 }
-
-declare let module: object;
-
-export default hot(module)(App);

@@ -1,0 +1,26 @@
+#page-wrapper {
+  display: grid;
+  min-height: 100vh;
+  gap: 20px;
+  grid-template-columns: 100%;
+  grid-template-rows: 70px auto 50px;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+
+  > header {
+    grid-area: header;
+    background: yellow;
+  }
+
+  > main {
+    grid-area: main;
+    background: red;
+  }
+
+  > footer {
+    grid-area: footer;
+    background: green;
+  }
+}
