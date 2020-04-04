@@ -11,24 +11,32 @@ import Footer from "./layout/Footer";
 export default class App extends React.Component<{}, undefined> {
   public render() {
     return (
-      <section id="page-wrapper">
-        <Header />
 
-        <main>
-          <Router>
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/about">
-                <About />
-              </Route>
-            </Switch>
-          </Router>
-        </main>
+      <Router>
+        <section id="page-wrapper">
+          <Header />
 
-        <Footer />
-      </section>
+          <main>
+
+              <div>
+                <p>Zanim sie ostyluje</p>
+
+                <span>Jestem kolorowy</span>
+              </div>
+
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route path="/about">
+                  <About />
+                </Route>
+              </Switch>
+          </main>
+
+          <Footer />
+        </section>
+      </Router>
     );
   }
 }

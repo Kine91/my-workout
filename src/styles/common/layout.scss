@@ -23,4 +23,12 @@
     grid-area: footer;
     background: green;
   }
+
+  p, span {
+    display: block;
+
+  }
+
+  p { background: yellow;}
+  span { background: purple;}
 }
