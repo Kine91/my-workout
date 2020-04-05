@@ -1,33 +1,10 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
+import * as React from 'react';
 
-export interface Props {
-  children?: React.ReactNode
+interface ToggleProps {
   text: string;
-  click: () => void;
+  ClickHandler: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-export interface State {
-  text: string;
-  click: () => void;
-}
-
-export default class Button extends React.Component<Props, State> {
-
-  constructor(props: Props) {
-    super(props)
-
-    this.state = {
-      text: props.text,
-      click: props.click
-    }
-  }
-
-  render() {
-    return (
-      <button onClick="{(event) => this.state.click()}">
-        {this.state.text}
-      </button>
-    )
-  }
+export default function Button(Props: ToggleProps) {
+    return <button onClick={Props.ClickHandler}>{Props.text}</button>
 }

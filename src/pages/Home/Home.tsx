@@ -35,9 +35,9 @@ export default class Home extends React.Component<Props, State> {
         <div>
                 <p className={styles.paragraph}>Ostyluj sie dziadu</p>
 
-                <span>glowna Jestem kolorowy</span>
+                Użytkownik jest teraz <b>{this.state.isActive ? 'aktywny' : 'nieaktywny'}</b>.
 
-                <Button text="Przycisk" click="{this.toogleActive}" />
+                <Button text="Przycisk" ClickHandler={this.toggleActive} />
               </div>
       </div>
     )
