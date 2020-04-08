@@ -69,6 +69,8 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "css-reset-and-normalize": "^2.1.0"
+    "bootstrap": "^4.4.1",
+    "css-reset-and-normalize": "^2.1.0",
+    "reactstrap": "^8.4.1"
   }
 }
