@@ -1,34 +1,15 @@
 #page-wrapper {
-  display: grid;
-  min-height: 100vh;
-  gap: 20px;
-  grid-template-columns: 100%;
-  grid-template-rows: 70px auto 50px;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
 
-  > header {
-    grid-area: header;
-    background: yellow;
-  }
+	> main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: calc(100vh - 94px);
+	}
 
-  > main {
-    grid-area: main;
-    background: red;
-  }
-
-  > footer {
-    grid-area: footer;
-    background: green;
-  }
-
-  p, span {
-    display: block;
-
-  }
-
-  p { background: yellow;}
-  span { background: purple;}
+	> footer {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
 }

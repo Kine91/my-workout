@@ -17,13 +17,6 @@ export default class App extends React.Component<{}, undefined> {
           <Header />
 
           <main>
-
-              <div>
-                <p>Zanim sie ostyluje</p>
-
-                <span>Jestem kolorowy</span>
-              </div>
-
               <Switch>
                 <Route exact path="/">
                   <Home />

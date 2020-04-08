@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Container, Row, Col } from "reactstrap";
 
 export interface Props {
   children?: React.ReactNode
@@ -18,7 +19,11 @@ export default class Footer extends React.Component<Props, State> {
 
   render() {
     return (
-      <footer>{ this.props.children }</footer>
+      <footer>
+        <Container fluid={true}>
+          <span>Copyright 2020 by Tomasz Kuchne</span>
+        </Container>
+      </footer>
     )
   }
 }
