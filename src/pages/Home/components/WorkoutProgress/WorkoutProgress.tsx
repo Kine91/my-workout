@@ -1,30 +1,36 @@
 import * as React from "react";
 import { Progress } from "reactstrap";
+import { RootState } from "../../../../redux";
+import { connect } from "react-redux";
 
-export interface Props {
-    children?: React.ReactNode
-}
+const mapStateToProps = (state: RootState) => ({
+  inProgress: state.workout.inProgress
+});
 
-export interface State {
-}
+type Props = ReturnType<typeof mapStateToProps>
 
-export default class WorkoutProgress extends React.Component<Props, State> {
+export interface State { }
+
+export class WorkoutProgress extends React.Component<Props, State> {
 
     constructor(props: Props) {
-        super(props)
-
-        this.state = {
-        }
+      super(props)
     }
 
     render() {
-        return (
-            <Progress multi>
-                <Progress bar value="5" max={55}>5</Progress>
-                <Progress bar color="success" value="15" max={55}>15</Progress>
-                <Progress bar color="warning" value="10" max={55}>10</Progress>
-                <Progress bar color="danger" value="10" max={55}>10</Progress>
-            </Progress>
-        )
+      const inProgress = this.props.inProgress;
+
+      return (
+        <>
+        {inProgress
+          ? <h1>Ćwiczymy</h1>
+          : <h1>Pierdzimy w stołek</h1>
+        }
+        </>
+      )
     }
 }
+
+export default connect(
+  mapStateToProps
+)(WorkoutProgress);

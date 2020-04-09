@@ -35,7 +35,7 @@ export default class Home extends React.Component<Props, State> {
           <Col sm="12" md="6">
             <StartWorkout></StartWorkout>
           </Col>
-          
+
           <Col sm="12" md="6">
             <WorkoutProgress></WorkoutProgress>
           </Col>

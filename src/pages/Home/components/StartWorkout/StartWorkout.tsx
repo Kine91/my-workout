@@ -1,35 +1,45 @@
 import * as React from "react";
-import {
-    Card, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
-  } from 'reactstrap';
+import { Card, CardBody, CardTitle, Button } from 'reactstrap';
+import { RootState } from "../../../../redux";
+import { startWorkout, stopWorkout } from "../../../../redux/modules/workout";
+import { connect } from "react-redux";
 
-export interface Props {
-    children?: React.ReactNode
-}
+const mapStateToProps = (state: RootState) => ({
+  inProgress: state.workout.inProgress,
+});
 
-export interface State {
-}
+const mapDispatchToProps = { startWorkout, stopWorkout };
 
-export default class StartWorkout extends React.Component<Props, State> {
+type Props = ReturnType<typeof mapStateToProps> & typeof mapDispatchToProps;
 
-    constructor(props: Props) {
-        super(props)
+const UnconnectedStartWorkout: React.FC<Props> = ({
+  inProgress,
+  startWorkout,
+  stopWorkout
+}) => {
+  return (
+    <Card>
+      <CardBody>
+        <CardTitle>
+          {inProgress
+            ? <h1>Ćwiczymy nie śpimy</h1>
+            : <h1>Rusz dupe leniu i zaczynaj</h1>
+          }
+        </CardTitle>
 
-        this.state = {
+        {inProgress
+          ? <Button onClick={() => stopWorkout()}>Stop</Button>
+          : <Button onClick={() => startWorkout()}>Start</Button>
         }
-    }
+      </CardBody>
+    </Card>
+  );
+};
 
-    render() {
-        return (
-            <Card>
-                <CardBody>
-                    <CardTitle>Card title</CardTitle>
-                    <CardSubtitle>Card subtitle</CardSubtitle>
-                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                    <Button>Button</Button>
-                </CardBody>
-            </Card>
-        )
-    }
-}
+
+const StartWorkout = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UnconnectedStartWorkout);
+
+export default StartWorkout;

@@ -19,7 +19,7 @@ export default class App extends React.Component<{}, undefined> {
           <main>
               <Switch>
                 <Route exact path="/">
-                  <Home />
+                  <Home {...this.state} />
                 </Route>
                 <Route path="/about">
                   <About />
