@@ -71,6 +71,9 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "css-reset-and-normalize": "^2.1.0",
-    "reactstrap": "^8.4.1"
+    "react-redux": "^7.2.0",
+    "reactstrap": "^8.4.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   }
 }
