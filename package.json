@@ -29,6 +29,7 @@
     "start": "yarn run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
     "start-prod": "yarn run build && node express.js",
+    "start-server": "nodemon -x ts-node src/server/main.ts",
     "test": "jest --coverage --watchAll --config=configs/jest.json"
   },
   "devDependencies": {
@@ -37,7 +38,7 @@
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "@types/jest": "^25.1.4",
-    "@types/node": "^13.9.0",
+    "@types/node": "^13.11.1",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "@types/react-router": "^5.1.5",
@@ -69,15 +70,22 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@types/express": "^4.17.6",
+    "@types/mongodb": "^3.5.8",
     "@types/react-redux": "^7.1.7",
     "@types/redux": "^3.6.0",
     "@types/redux-thunk": "^2.1.0",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
+    "cors": "^2.8.5",
     "css-reset-and-normalize": "^2.1.0",
+    "mongodb": "^3.5.6",
+    "nodemon": "^2.0.3",
     "react-redux": "^7.2.0",
     "reactstrap": "^8.4.1",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "ts-node": "^8.8.2"
   }
 }
