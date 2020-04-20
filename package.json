@@ -30,6 +30,7 @@
     "start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
     "start-prod": "yarn run build && node express.js",
     "start-server": "nodemon -x ts-node src/server/main.ts",
+    "init-db": "nodemon -x ts-node /src/server/mongo/init-db/init.ts",
     "test": "jest --coverage --watchAll --config=configs/jest.json"
   },
   "devDependencies": {
@@ -86,6 +87,7 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "ts-node": "^8.8.2"
+    "ts-node": "^8.8.2",
+    "uuid": "^7.0.3"
   }
 }

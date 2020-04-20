@@ -1,5 +1,5 @@
 import * as mongo from 'mongodb';
- 
+
 export class MongoHelper {
   public static client: mongo.MongoClient;
 
