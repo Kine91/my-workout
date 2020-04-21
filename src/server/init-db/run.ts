@@ -3,9 +3,12 @@ import { InitMangoHelper } from "./init-db.helper";
 
 const initDB = async () => {
   try {
-    await MongoHelper.connect(`mongodb://localhost:27017/myWorkout`);
     console.info(`Connected to Mongo!`);
-    const initHelper = new InitMangoHelper(MongoHelper.client);
+
+    await MongoHelper.connect(`mongodb://localhost:27017/myOrganizer`);
+    const initHelper = new InitMangoHelper(MongoHelper.client, 'myOrganizer');
+    initHelper.initWorkouts();
+
   } catch (err) {
     console.error(`Unable to connect to Mongo!`, err);
   }

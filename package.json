@@ -30,7 +30,7 @@
     "start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
     "start-prod": "yarn run build && node express.js",
     "start-server": "nodemon -x ts-node src/server/main.ts",
-    "init-db": "nodemon -x ts-node /src/server/mongo/init-db/init.ts",
+    "init-db": "nodemon -x ts-node src/server/init-db/run.ts",
     "test": "jest --coverage --watchAll --config=configs/jest.json"
   },
   "devDependencies": {

@@ -7,7 +7,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
-  context: resolve(__dirname, '../../src'),
+  context: resolve(__dirname, '../../src/app/'),
   module: {
     rules: [
       {
