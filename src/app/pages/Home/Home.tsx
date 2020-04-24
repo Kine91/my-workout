@@ -2,6 +2,7 @@ import * as React from "react";
 import { Container, Row, Col } from 'reactstrap';
 import StartWorkout from "./components/StartWorkout";
 import WorkoutProgress from "./components/WorkoutProgress";
+import WorkoutHistory from "./components/WorkoutHistory";
 
 export interface Props {
   children?: React.ReactNode
@@ -38,6 +39,11 @@ export default class Home extends React.Component<Props, State> {
 
           <Col sm="12" md="6">
             <WorkoutProgress></WorkoutProgress>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs="12">
+            <WorkoutHistory></WorkoutHistory>
           </Col>
         </Row>
       </Container>
