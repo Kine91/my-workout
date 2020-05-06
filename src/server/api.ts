@@ -19,4 +19,10 @@ api.get('/api/workouts', (req: express.Request, response: express.Response, next
   });
 });
 
+api.post('/api/workout', (req: express.Request, res: express.Response) => {
+  const collection = getCollection('workouts');
+  collection.insertOne(req.body);
+  res.sendStatus(200);
+});
+
 export { api };
