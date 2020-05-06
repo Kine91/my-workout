@@ -43,11 +43,9 @@ export const workoutReducer = (
 ): WorkoutState => {
   switch (action.type) {
     case START_WORKOUT:
-      console.log(state.counter);
       return {
         ...state,
-        inProgress: true,
-        counter: state.counter + 1
+        inProgress: true
       };
     case STOP_WORKOUT:
       return {

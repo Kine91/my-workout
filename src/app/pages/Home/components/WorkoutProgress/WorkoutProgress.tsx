@@ -7,13 +7,15 @@ const mapStateToProps = (state: RootState) => ({
   counter: state.workout.counter
 });
 
-type Props = ReturnType<typeof mapStateToProps>
-
-export interface State {
+interface Props {
   barValue: number;
 }
 
-export class WorkoutProgress extends React.Component<Props, State> {
+interface State {
+  barValue: number;
+}
+
+export default class WorkoutProgress extends React.Component<Props, State> {
 
     constructor(props: Props) {
       super(props);
@@ -22,13 +24,9 @@ export class WorkoutProgress extends React.Component<Props, State> {
     render() {
       return (
         <div>
-          <div className="text-center">{this.props.counter}%</div>
-          <Progress value={this.props.counter} />
+          <div className="text-center">{this.props.barValue}%</div>
+          <Progress value={this.props.barValue} />
         </div>
       )
     }
 }
-
-export default connect(
-  mapStateToProps
-)(WorkoutProgress);

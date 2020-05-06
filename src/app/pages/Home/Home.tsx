@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Container, Row, Col, Card } from 'reactstrap';
-import StartWorkout from "./components/StartWorkout";
-import WorkoutProgress from "./components/WorkoutProgress";
+import Workout from "./components/Workout";
 import WorkoutHistory from "./components/WorkoutHistory";
 
 export interface Props {
@@ -14,6 +13,7 @@ export interface State {
 
 
 export default class Home extends React.Component<Props, State> {
+  progressInterval;
 
   constructor(props: Props) {
     super(props)
@@ -35,8 +35,7 @@ export default class Home extends React.Component<Props, State> {
         <Row>
           <Col sm="12" md="6">
             <Card>
-              <StartWorkout></StartWorkout>
-              <WorkoutProgress></WorkoutProgress>
+              <Workout></Workout>
             </Card>
           </Col>
 
