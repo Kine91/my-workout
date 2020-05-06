@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Card } from 'reactstrap';
 import StartWorkout from "./components/StartWorkout";
 import WorkoutProgress from "./components/WorkoutProgress";
 import WorkoutHistory from "./components/WorkoutHistory";
@@ -34,16 +34,27 @@ export default class Home extends React.Component<Props, State> {
       <Container>
         <Row>
           <Col sm="12" md="6">
-            <StartWorkout></StartWorkout>
+            <Card>
+              <StartWorkout></StartWorkout>
+              <WorkoutProgress></WorkoutProgress>
+            </Card>
           </Col>
 
           <Col sm="12" md="6">
-            <WorkoutProgress></WorkoutProgress>
+            <Card>
+            </Card>
           </Col>
         </Row>
         <Row>
-          <Col xs="12">
-            <WorkoutHistory></WorkoutHistory>
+          <Col sm="12" md="6">
+            <Card className="full-size">
+              <WorkoutHistory></WorkoutHistory>
+            </Card>
+          </Col>
+
+          <Col sm="12" md="6">
+            <Card>
+            </Card>
           </Col>
         </Row>
       </Container>

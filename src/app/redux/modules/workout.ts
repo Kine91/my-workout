@@ -3,10 +3,14 @@ export const STOP_WORKOUT = "STOP_WORKOUT";
 
 export interface WorkoutState {
   inProgress: boolean;
+  counter: number;
 }
 
 export interface StartWorkoutAction {
-	type: typeof START_WORKOUT;
+  type: typeof START_WORKOUT;
+  payload?: {
+    counter: number;
+  }
 }
 
 export interface StopWorkoutAction {
@@ -29,7 +33,8 @@ export const stopWorkout = (): WorkoutActionTypes => {
 
 
 const initialState: WorkoutState = {
-  inProgress: false
+  inProgress: false,
+  counter: 0
 }
 
 export const workoutReducer = (
@@ -38,11 +43,15 @@ export const workoutReducer = (
 ): WorkoutState => {
   switch (action.type) {
     case START_WORKOUT:
+      console.log(state.counter);
       return {
-        inProgress: true
+        ...state,
+        inProgress: true,
+        counter: state.counter + 1
       };
     case STOP_WORKOUT:
       return {
+        ...state,
         inProgress: false
       };
     default:

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Card, CardBody, CardTitle, Button } from 'reactstrap';
+import { CardBody, CardTitle, Button } from 'reactstrap';
 import { RootState } from "../../../../redux";
 import { startWorkout, stopWorkout } from "../../../../redux/modules/workout";
 import { connect } from "react-redux";
@@ -13,12 +13,12 @@ const mapDispatchToProps = { startWorkout, stopWorkout };
 type Props = ReturnType<typeof mapStateToProps> & typeof mapDispatchToProps;
 
 const UnconnectedStartWorkout: React.FC<Props> = ({
-  inProgress,
+  inProgress
+
   startWorkout,
   stopWorkout
 }) => {
   return (
-    <Card>
       <CardBody>
         <CardTitle>
           {inProgress
@@ -32,7 +32,6 @@ const UnconnectedStartWorkout: React.FC<Props> = ({
           : <Button onClick={() => startWorkout()}>Start</Button>
         }
       </CardBody>
-    </Card>
   );
 };
 
